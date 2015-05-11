@@ -1,5 +1,4 @@
 apply plugin: 'com.android.library'
-
 android {
     compileSdkVersion 22
     buildToolsVersion "22.0.1"
@@ -10,10 +9,12 @@ android {
         versionCode 1
         versionName "1.0"
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
 }
-
 apply plugin: 'android-maven'
-
 // build a jar with source files
 task sourcesJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
@@ -21,4 +22,7 @@ task sourcesJar(type: Jar) {
 }
 artifacts {
     archives sourcesJar
+}
+
+dependencies {
 }
