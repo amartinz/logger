@@ -265,7 +265,7 @@ public class Logger {
     }
 
     public static String getMessage(String msg, final Object... objects) {
-        if (objects != null && objects.length > 0 && objects[0] != null) {
+        if (objects != null && objects.length > 0) {
             msg = String.format(msg, objects);
         }
         final String sourceFileLocation = (LOOKUP_DISABLED ? "" : getSourceFileLocation());
